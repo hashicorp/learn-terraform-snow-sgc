@@ -2,7 +2,7 @@ terraform {
 
   cloud {
     workspaces {
-      name = "learn-snow-sgc"
+      name = "learn-terraform-snow-sgc"
     }
   }
 
