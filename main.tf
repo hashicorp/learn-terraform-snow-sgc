@@ -1,21 +1,3 @@
-terraform {
-
-  cloud {
-    workspaces {
-      name = "learn-terraform-snow-sgc"
-    }
-  }
-
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.45"
-    }
-  }
-
-  required_version = "~> 1.3.0"
-}
-
 provider "aws" {
   region = "us-west-2"
 }
@@ -47,9 +29,4 @@ resource "aws_instance" "app_server" {
   tags = {
     Name = "SNOWManagedInstance"
   }
-}
-
-output "instance_id" {
-  description = "ID of the EC2 instance"
-  value       = aws_instance.app_server.id
 }
